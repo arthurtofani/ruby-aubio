@@ -3,12 +3,13 @@ module Aubio
 
 		def initialize(aubio_source, params)
       # TODO: cleanup param dups
+			@method = params[:method] || "default"
 			@sample_rate = params[:sample_rate] || 44100
 			@window_size = params[:window_size] || 1024
 			@hop_size    = params[:hop_size]    || 512
 
 			@source = aubio_source
-			@onset = Api.new_aubio_onset('default', @window_size, @hop_size, @sample_rate)
+			@onset = Api.new_aubio_onset(@method, @window_size, @hop_size, @sample_rate)
 			Api.aubio_onset_set_minioi_ms(@onset, 12.0)
 			Api.aubio_onset_set_threshold(@onset, 0.3)
 
