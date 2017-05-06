@@ -15,7 +15,7 @@ module Aubio
     attach_function :aubio_tempo_get_last_s, [:pointer], :float
     attach_function :aubio_tempo_get_last_ms, [:pointer], :float
     attach_function :aubio_tempo_set_silence, [:pointer, :float], :int
-    attach_function :aubio_tempo_get_silence, [:pointer], :float
+    #attach_function :aubio_tempo_get_silence, [:pointer], :float
     attach_function :aubio_tempo_set_threshold, [:pointer, :float], :int
     attach_function :aubio_tempo_get_threshold, [:pointer], :float
     attach_function :aubio_tempo_get_bpm, [:pointer], :float
